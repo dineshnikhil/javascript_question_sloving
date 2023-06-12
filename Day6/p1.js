@@ -10,10 +10,10 @@ function print_pattern(num) {
 	for (let i = 1; i <= num; i++) {
 		var empty_str = '';
 		for (let j = 1; j < i + 1; j++) {
-			empty_str += '*';
+			empty_str += '* ';
 		}
 		console.log(empty_str);
 	}
 }
 
-print_pattern(19);
+print_pattern(7);
