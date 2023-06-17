@@ -4,8 +4,6 @@ function makeAdder(num) {
 	};
 }
 
-var add5 = makeAdder(5);
 var add10 = makeAdder(10);
 
-add5(5);
 add10(5);
