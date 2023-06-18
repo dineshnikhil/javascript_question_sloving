@@ -31,17 +31,17 @@ function uploadFile(file, url) {
 	});
 }
 
-var downloadinData = fetchData('www.google.drive.com');
-downloadinData
+var downloadedData = fetchData('dineshnikhil.com');
+downloadedData
 	.then((value) => {
-		var writtingData = writeFile(value);
-		writtingData.then((filename) => {
-			var uploadedData = uploadFile(filename, 'www.google.drive.com');
-			uploadedData.then((status) => {
-				console.log(status);
-			});
-		});
+		return value;
 	})
-	.then((data) => {
-		console.log(data);
+	.then((value) => {
+		return writeFile(value);
+	})
+	.then((value) => {
+		return uploadFile(value, 'dineshnikhil.com');
+	})
+	.then((value) => {
+		console.log(value);
 	});

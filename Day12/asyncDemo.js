@@ -31,17 +31,11 @@ function uploadFile(file, url) {
 	});
 }
 
-var downloadinData = fetchData('www.google.drive.com');
-downloadinData
-	.then((value) => {
-		var writtingData = writeFile(value);
-		writtingData.then((filename) => {
-			var uploadedData = uploadFile(filename, 'www.google.drive.com');
-			uploadedData.then((status) => {
-				console.log(status);
-			});
-		});
-	})
-	.then((data) => {
-		console.log(data);
-	});
+async function process() {
+	var downloadingData = await fetchData('dineshnikhil.com');
+	var file = await writeFile(downloadingData);
+	var uploadedStatus = await uploadFile(file, 'dineshnikhil.com');
+	console.log('process status is: ', uploadedStatus);
+}
+
+process();
